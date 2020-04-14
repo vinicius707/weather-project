@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+}
+.container select{
+    padding: 0 10px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+}
+.cotainer input{
+    padding: 0 10px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+}
