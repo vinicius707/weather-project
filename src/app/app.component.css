@@ -259,7 +259,7 @@ svg#clouds {
 nav{
   width: 100%;
   height: auto;
-  background-color: lightblue;
+  background-color: transparent;
   color: whitesmoke;
   display: flex;
   align-items: center;
