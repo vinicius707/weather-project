@@ -264,10 +264,15 @@ nav{
   display: flex;
   align-items: center;
   font-size: initial;
+  justify-content: space-between;
 }
 nav img{
   width: 60px;
   margin-left: 10px;
+}
+#logo{
+  display: flex;
+  align-items: center;
 }
 
 #showDisplay{
