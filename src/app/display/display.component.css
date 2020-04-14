@@ -12,7 +12,7 @@
     /* background-color: blue; */
     align-self: flex-end;
     margin: 0 100px;
-    color: white
+    color: rgb(47, 40, 82);
 }
 #dados p:first-child{
     font-size: 100px;

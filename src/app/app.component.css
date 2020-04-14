@@ -65,11 +65,15 @@ nav img{
   margin-left: 10px;
 }
 #logo{
+  color: rgb(47, 40, 82);
+  font-size: xx-large;
   display: flex;
   align-items: center;
+  font-weight: bolder;
 }
 
 #showDisplay{
+  color: rgb(47, 40, 82);
   display: flex;
   justify-content: center;
   text-align: center;
