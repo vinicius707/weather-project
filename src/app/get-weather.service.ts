@@ -18,7 +18,8 @@ export class GetWeatherService {
 
   }
 
- /*  export class GetWeatherService {
+ 
+    /*  export class GetWeatherService {
 
     constructor(private http: HttpClient) { }
   
