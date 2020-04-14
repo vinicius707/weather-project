@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  value:string = "value"
+  value: string = "value"
 
   staticElements = [
     {
