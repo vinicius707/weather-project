@@ -48,15 +48,15 @@ export class SearchComponent implements OnInit {
     // else - cityOrPostal = "city="
     
     let numero:Number = event.target.value;
-
-   
-    //if numero==nan
+    console.log(event.target.value)
     if (numero == NaN) {
+      console.log("if")
       this.weatherApi.searchApi = event.target.value;
-      this.weatherApi.cityOrPostal = "city="
+      this.weatherApi.cityOrPostal = ""
     }else{
+      console.log("else")      
       this.weatherApi.searchApi = numero;
-      this.weatherApi.cityOrPostal = "postal_code="
+      this.weatherApi.cityOrPostal = "city="
     }
   }
 
