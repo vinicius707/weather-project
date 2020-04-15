@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GetWeatherService } from '../get-weather.service';
+
 
 @Component({
   selector: 'app-search',
@@ -35,9 +37,15 @@ export class SearchComponent implements OnInit {
       temperatura: "38°c"
     },
   ]
-  constructor() { }
+  constructor(private weatherApi: GetWeatherService) { }
 
   ngOnInit(): void {
+  }
+
+  teste(){
+    this.weatherApi.getWeather().subscribe((data)=>{
+      console.log(data)
+    })
   }
 
 }
