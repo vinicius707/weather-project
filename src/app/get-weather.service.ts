@@ -7,8 +7,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class GetWeatherService {
 
-  private baseUrl = 'http://api.weatherbit.io/v2.0/current?'
+  private baseUrl = 'https://api.weatherbit.io/v2.0/current?'
   private apiKey = "f5d346153e7f4af49fa9d36337a3ab30"
+  private total = "https://api.weatherbit.io/v2.0/current?city=Raleigh,NC&key=f5d346153e7f4af49fa9d36337a3ab30"
 
 
   constructor(private http: HttpClient) { }
@@ -18,9 +19,9 @@ export class GetWeatherService {
     .set('content-type','aplication/json')
     .set('Access-Control-Allow-Origin','*');
     console.log(headers)
-    let dados = this.http.get(this.baseUrl + "city=SaoPaulo"  + "," + `NC&key=${this.apiKey}`, {'headers':headers})
+    let dados = this.http.get(this.total, {'headers':headers})
     console.log(dados)
-    return this.http.get(this.baseUrl + "city=SaoPaulo"  + "," + `NC&key=${this.apiKey}`, {'headers':headers})
+    return this.http.get(this.total, {'headers':headers})
     // let apiWeather = this.baseUrl + data
     // return this.http.get(apiWeather)
 
