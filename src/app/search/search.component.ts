@@ -40,12 +40,23 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {}
 
   keyUp(event) {
-    let valorConsulta = event.target.value;
-    if (valorConsulta == 'string') {
-      this.weatherApi.searchApi;
-      this.weatherApi.state;
-    }else{
+    // -- o valorConsulta == String || Number
+    // -- o valorConta:Number
+    // -- o valorConsulta pega o 1 elemento verifica se ele é um numero 
+    // -- o valorConta:Number true number ou se NaN false
+    // if - cityOrPostal = "postal_code="
+    // else - cityOrPostal = "city="
+    
+    let numero:Number = event.target.value;
 
+   
+    //if numero==nan
+    if (numero == NaN) {
+      this.weatherApi.searchApi = event.target.value;
+      this.weatherApi.cityOrPostal = "city="
+    }else{
+      this.weatherApi.searchApi = numero;
+      this.weatherApi.cityOrPostal = "postal_code="
     }
   }
 
@@ -55,3 +66,6 @@ export class SearchComponent implements OnInit {
     });
   }
 }
+
+
+"https://api.weatherbit.io/v2.0/current?city=RIBEIR%C3%83O%20PIRES&country=BR&key=f5d346153e7f4af49fa9d36337a3ab30"
