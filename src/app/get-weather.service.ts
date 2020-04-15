@@ -2,40 +2,34 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class GetWeatherService {
+  private apiKey = 'country=BR&lang=pt&key=f5d346153e7f4af49fa9d36337a3ab30';
+  public searchApi: any;
+  public state = '';
+  private baseUrl = `https://api.weatherbit.io/v2.0/current?${this.state}=${this.searchApi}&${this.apiKey}`;
 
-  private baseUrl = 'https://api.weatherbit.io/v2.0/current?'
-  private apiKey = "f5d346153e7f4af49fa9d36337a3ab30"
-  private total = "https://api.weatherbit.io/v2.0/current?city=Raleigh,NC&key=f5d346153e7f4af49fa9d36337a3ab30"
-
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getWeather() {
     const headers = new HttpHeaders()
-    .set('content-type','aplication/json')
-    .set('Access-Control-Allow-Origin','*');
-    console.log(headers)
-    let dados = this.http.get(this.total, {'headers':headers})
-    console.log(dados)
-    return this.http.get(this.total, {'headers':headers})
+      .set('content-type', 'aplication/json')
+      .set('Access-Control-Allow-Origin', '*');
+    console.log(headers);
+    return this.http.get(this.baseUrl, { headers: headers });
     // let apiWeather = this.baseUrl + data
     // return this.http.get(apiWeather)
-
   }
 
- 
-    /*  export class GetWeatherService {
+  /*  export class GetWeatherService {
 
     constructor(private http: HttpClient) { }
-  
+
     getWeather(dataCity) {
-  
+
       let url = "http://api.weatherbit.io/v2.0/current?" + dataCity + "key=f5d346153e7f4af49fa9d36337a3ab30"
       return this.http.get(url)
-  
+
     } */
 }
