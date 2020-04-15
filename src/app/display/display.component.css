@@ -1,39 +1,47 @@
-#disp{
-    width: 98vw;
-    height: 80vh;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-    font-family: Simplifica;
+#disp {
+  width: 98vw;
+  height: 80vh;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  font-family: Simplifica;
+  font-weight: bold;
 }
-#dados{
-    width: 300px;
-    height: auto;
-    /* background-color: blue; */
-    align-self: flex-end;
-    margin: 0 100px;
-    color: rgb(47, 40, 82);
+
+#dados {
+  width: 300px;
+  height: auto;
+  /* background-color: blue; */
+  align-self: flex-end;
+  margin: 0 100px;
+  color: rgb(47, 40, 82);
 }
-#dados p:first-child{
-    font-size: 100px;
+
+#dados p:first-child {
+  font-size: 120px;
 }
-#dados p{
-    font-size: 40px;
+
+#dados p {
+  font-size: 55px;
 }
-#dados p:last-child{
-    font-size: 28px;
+
+#dados p:last-child {
+  font-size: 40px;
 }
-#mostrarMais{
-    border-right-style: solid;
-    border-bottom-style: solid;
-    transform: rotate(45deg);
-    width: 30px;
-    height: 30px;
-    margin-left: 136px;
-    cursor: pointer;
+
+#mostrarMais {
+  border-right-style: solid;
+  border-bottom-style: solid;
+  transform: rotate(45deg);
+  width: 30px;
+  height: 30px;
+  margin-left: 136px;
+  cursor: pointer;
 }
-#outrosValores{
-    font-size: 20px;
-    display: none;
-    justify-content: space-between;
+
+#outrosValores {
+  margin-top: 20px;
+  font-size: 45px;
+  display: none;
+  justify-content: space-between;
 }
