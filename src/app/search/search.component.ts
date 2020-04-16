@@ -40,13 +40,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {}
 
   keyUp(event) {
-    // -- o valorConsulta == String || Number
-    // -- o valorConta:Number
-    // -- o valorConsulta pega o 1 elemento verifica se ele é um numero 
-    // -- o valorConta:Number true number ou se NaN false
-    // if - cityOrPostal = "postal_code="
-    // else - cityOrPostal = "city="
-    
+
     let numero:Number = event.target.value;
     console.log(event.target.value)
     if (numero == NaN) {
@@ -54,7 +48,7 @@ export class SearchComponent implements OnInit {
       this.weatherApi.searchApi = event.target.value;
       this.weatherApi.cityOrPostal = ""
     }else{
-      console.log("else")      
+      console.log("else")
       this.weatherApi.searchApi = numero;
       this.weatherApi.cityOrPostal = "city="
     }
