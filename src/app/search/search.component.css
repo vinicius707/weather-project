@@ -1,51 +1,36 @@
 .container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30vh;
 }
 
-.container select {
-  padding: 0 10px;
-  border: 1px solid lightgray;
-  border-radius: 15px;
-  font-family: Simplifica;
-}
-
-#id {
-  padding: 0 10px;
-  border: 1px solid lightgray;
-  border-radius: 15px;
-}
-
-input {
-  margin: 7px;
-  width: 200px;
-  height: 35px;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 20px;
-  text-align: justify;
-  font-size: xx-large;
-  align-content: center;
-  font-family: Simplifica;
-}
-
-select {
-  margin: 7px;
-  width: 200px;
-  height: 35px;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 20px;
-  text-align: justify;
-  font-size: xx-large;
-  align-content: center;
-}
-
-button {
-  height: 40px;
-  border-radius: 30px 60px;
-  background-color: rgb(206, 59, 22);
-  color: white;
-  padding: 10px;
+.input-search {
+  display: inline-block;
+  width: 50%;
+  height: 5vh;
   border: none;
-  font-family: Simplifica;
-  font-weight: bold;
-  font-size: 22px;
+  border-bottom: 1px solid #000000;
+  background: transparent;
+  font-size: 2rem;
+}
+
+.input-search:focus,
+.input-search:active {
+  outline: none;
+}
+
+::placeholder {
+  color: #000000;
+  font-size: 2rem;
+}
+
+.submit-search {
+  width: 20%;
+  height: 5vh;
+  border: none;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  border-radius: 20px;
+  font-size: 1.6rem;
 }

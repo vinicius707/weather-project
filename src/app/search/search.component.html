@@ -1,12 +1,4 @@
-<div class="container">
-  <div class="">
-    <p class=""></p>
-    <input type="text" placeholder="Search" id="id" (change)="keyUp($event)" autofocus><button type="submit" (click)="teste()">Search</button>
-    <span class=""></span>
-  </div>
-  <div>
-    <select>
-      <option *ngFor="let element of staticElements">{{element.cidade}}, {{element.temperatura}}</option>
-    </select>
-  </div>
-</div>
+<form class="container">
+  <input class="input-search" name="localization" type="text" placeholder="Search" (change)="keyUp($event)" autofocus>
+  <input class="submit-search" name="submit" type="submit" value="Search">
+</form>
