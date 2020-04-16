@@ -1,36 +1,7 @@
-:host {
-  font-family: Simplifica;
-  font-size: 14px;
-  color: #333;
-  box-sizing: border-box;
-}
-
-nav{
-  width: 100%;
-  height: auto;
-  background-color: transparent;
-  color: whitesmoke;
-  display: flex;
-  align-items: center;
-  font-size: initial;
-  justify-content: space-between;
-}
-nav img{
-  width: 60px;
-  margin-left: 10px;
-}
-#logo{
-  color: rgb(47, 40, 82);
-  font-size: xx-large;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-}
-
-#showDisplay{
-  color: rgb(47, 40, 82);
+.header-brand {
   display: flex;
   justify-content: center;
-  text-align: center;
+  margin-top: 8vw;
+  font-size: 2rem;
+  font-weight: bolder;
 }
-
