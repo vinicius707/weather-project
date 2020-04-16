@@ -1,4 +1,5 @@
-<form class="container">
-  <input class="input input-search" name="localization" type="text" placeholder="Digite o nome da cidade" (change)="keyUp($event)" autofocus>
+<form [formGroup]="formPlace" (ngSubmit)="getPlace(formPlace.value)" class="container">
+  <input class="input input-search" name="place" type="text" placeholder="Digite o nome da cidade" autofocus formControlName="place">
   <input class="input input-icon" name="submit" type="submit">
+  <h1>{{ place }}</h1>
 </form>

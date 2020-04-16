@@ -6,8 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class GetWeatherService {
   private apiKey = 'country=BR&lang=pt&key=f5d346153e7f4af49fa9d36337a3ab30';
-  public searchApi
-  public cityOrPostal
+  public searchApi;
+  public cityOrPostal;
   private baseUrl = `https://api.weatherbit.io/v2.0/current?`;
 
   constructor(private http: HttpClient) {}
