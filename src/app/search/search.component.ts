@@ -47,8 +47,8 @@ export class SearchComponent implements OnInit {
   //   }
   // }
   
-  // clickMe(){
-  //   this.weatherApi.sendClick();
-  // }
+   clickMe(){
+    //  this.weatherApi.sendClick();
+  }
 
 }

@@ -12,21 +12,27 @@ import { BroadcastSearchService } from '../broadcast-search.service';
 })
 export class DisplayComponent implements OnInit {
 
-  clickEventSubscription:Subscription;
 
-  constructor(private _weatherApi: GetWeatherService, private  _broadcastService: BroadcastSearchService) {
-    
-    this.clickEventSubscription = this._weatherApi.getClick().subscribe( () => 
-    this.incrementCount());
+  temp
+  city
+  hour
+  description
+
+  clickEventSubscription: Subscription;
+
+  constructor(private _weatherApi: GetWeatherService, private _broadcastService: BroadcastSearchService) {
+
+    this.clickEventSubscription = this._weatherApi.getClick().subscribe(() =>
+      this.incrementCount());
   }
 
   ngOnInit(): void {
     this._broadcastService.inputSearch.subscribe(result => {
       console.log(result)
-      // this.callApi(result)
+      this.callApi(result)
     })
   }
- 
+
   count = 0;
 
   incrementCount() {
@@ -34,20 +40,21 @@ export class DisplayComponent implements OnInit {
   }
 
 
-  callApi(input:string): void{
+  callApi(input: string): void {
     let temperatura
     let cidade
-    let previsao
     let hora
     let descricao
-    this._weatherApi.getWeather(input).subscribe(result =>{
-      temperatura = result.data[0].temp
+    this._weatherApi.getWeather(input).subscribe(result => {
+      temperatura = result.data[0].app_temp
       cidade = result.data[0].city_name
-      previsao = result.data[0].app_temp
       hora = result.data[0].ob_time
       descricao = result.data[0].weather.description
-      console.log(descricao);
-      
+      this.temp = temperatura;
+      this.city = cidade;
+      this.hour = hora;
+      this.description = descricao;
+
     })
   }
 
