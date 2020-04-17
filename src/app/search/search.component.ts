@@ -39,16 +39,16 @@ export class SearchComponent implements OnInit {
     }        
   }
 
-  searchWeather() {
-    if(this.city.length != 0){
-      this.weatherApi.getWeather(this.city);
-    } else {
-      this.weatherApi.getWeather(this.postalCode);
-    }
-  }
+  // searchWeather() {
+  //   if(this.city.length != 0){
+  //     this.weatherApi.getWeather(this.city);
+  //   } else {
+  //     this.weatherApi.getWeather(this.postalCode);
+  //   }
+  // }
   
-  clickMe(){
-    this.weatherApi.sendClick();
-  }
+  // clickMe(){
+  //   this.weatherApi.sendClick();
+  // }
 
 }

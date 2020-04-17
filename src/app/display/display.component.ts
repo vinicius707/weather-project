@@ -21,7 +21,7 @@ export class DisplayComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._broadcastService.inputSerch.subscribe(result => {
+    this._broadcastService.inputSearch.subscribe(result => {
       console.log(result)
       // this.callApi(result)
     })

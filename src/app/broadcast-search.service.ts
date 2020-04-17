@@ -6,12 +6,12 @@ import { Injectable, EventEmitter } from '@angular/core';
 })
 export class BroadcastSearchService {
 
-  inputSerch = new EventEmitter<string> ();
+  inputSearch = new EventEmitter<string> ();
   
   constructor() { }
 
   getSearch(result:string) {
-    this.inputSerch.emit(result);
+    this.inputSearch.emit(result);
   }
 
 }
