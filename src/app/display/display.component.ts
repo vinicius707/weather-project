@@ -32,8 +32,5 @@ export class DisplayComponent implements OnInit {
     this.count++;
   }
 
-  callApi(input:string){
-    
-  }
 
 }
