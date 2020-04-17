@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GetWeatherService } from '../get-weather.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-display',
@@ -7,21 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayComponent implements OnInit {
 
-  visibility:number = 0
-  aqui(event){
-    let camp = document.getElementById("outrosValores")
-    if(this.visibility == 1){
-      camp.style.display = "flex"
-      return this.visibility =0;
-    } else{
-      camp.style.display = "none"
-      return this.visibility =1;
-    }
+  clickEventSubscription:Subscription;
+
+  // visibility:number = 0
+  // aqui(event){
+  //   let camp = document.getElementById("outrosValores")
+  //   if(this.visibility == 1){
+  //     camp.style.display = "flex"
+  //     return this.visibility =0;
+  //   } else{
+  //     camp.style.display = "none"
+  //     return this.visibility =1;
+  //   }
+  // }
+
+  constructor(private weatherApi: GetWeatherService) {
+
+    this.clickEventSubscription = this.weatherApi.getClick().subscribe( () => 
+    this.incrementCount());
   }
 
-  constructor() { }
-
   ngOnInit(): void {
+  }
+  count = 0;
+
+  incrementCount() {
+    this.count++;
   }
 
 }

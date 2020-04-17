@@ -1,3 +1,4 @@
+import { Weather } from './../weather';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { GetWeatherService } from '../get-weather.service';
@@ -33,5 +34,16 @@ export class SearchComponent implements OnInit {
     }        
   }
 
+  searchWeather() {
+    if(this.city.length != 0){
+      this.weatherApi.getWeather(this.city);
+    } else {
+      this.weatherApi.getWeather(this.postalCode);
+    }
+  }
+  
+  clickMe(){
+    this.weatherApi.sendClick();
+  }
 
 }

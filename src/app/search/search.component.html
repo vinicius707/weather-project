@@ -1,5 +1,5 @@
 <form [formGroup]="formPlace" (ngSubmit)="getPlace(formPlace.value)" class="container">
   <input class="input input-search" name="place" type="text" placeholder="Digite o nome da cidade" autofocus formControlName="place">
-  <input class="input input-icon" name="submit" type="submit">
+  <input class="input input-icon" name="submit" type="submit" (click)="clickMe()">
   <h1>{{ place }}</h1>
 </form>
