@@ -6,14 +6,13 @@
   display: flex;
   font-family: Simplifica;
   font-weight: bold;
+  /* animation: anima 10s ease 0; */
 }
 
 #dados {
-  width: 300px;
-  height: auto;
-  align-self: flex-end;
-  margin: 0 100px;
+  margin: 0 auto;
   color: #fff;
+  text-align: center;
 }
 
 #dados p:first-child {
@@ -44,3 +43,17 @@
   display: none;
   justify-content: space-between;
 }
+
+/* @keyframes anima {
+  0% {
+    transform: rotateY(-50px);
+  }
+
+  50% {
+    transform: rotateY(-25px);
+  }
+
+  100% {
+    transform: rotateY( 0px);
+  }
+} */

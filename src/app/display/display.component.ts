@@ -17,6 +17,7 @@ export class DisplayComponent implements OnInit {
   city
   hour
   description
+  wind
 
   clickEventSubscription: Subscription;
 
@@ -45,15 +46,20 @@ export class DisplayComponent implements OnInit {
     let cidade
     let hora
     let descricao
+    let vento
+
     this._weatherApi.getWeather(input).subscribe(result => {
       temperatura = result.data[0].app_temp
       cidade = result.data[0].city_name
       hora = result.data[0].ob_time
       descricao = result.data[0].weather.description
-      this.temp = temperatura;
+      vento = result.data[0].wind_spd
+      
+      this.temp = temperatura + "°" ;
       this.city = cidade;
       this.hour = hora;
       this.description = descricao;
+      this.wind =  "Vento: " + vento.toFixed(2) + " Km" + " | ";
 
     })
   }
