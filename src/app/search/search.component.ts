@@ -1,7 +1,8 @@
 import { Weather } from './../weather';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { GetWeatherService } from '../get-weather.service';
+import { BroadcastSearchService } from '../broadcast-search.service';
+
 
 @Component({
   selector: 'app-search',
@@ -16,7 +17,7 @@ export class SearchComponent implements OnInit {
   postalCode: number;
   formPlace: any;
 
-  constructor(private weatherApi: GetWeatherService) {}
+  constructor(private _broadcastService: BroadcastSearchService) {}
 
   ngOnInit() {
     this.formPlace = new FormGroup({
@@ -28,8 +29,12 @@ export class SearchComponent implements OnInit {
     this.place = data.place;
     let isNumber = Number(this.place);
     if(isNaN(isNumber)) {
-      return this.city = this.place;
+      this.city = this.place;
+      this._broadcastService.getSearch(this.place)
+      return this.city;
+
     } else {
+      // TODO Chamar BroadcastService,aqui (Como mostrar number utilizando union**)
       return this.postalCode = isNumber;
     }        
   }

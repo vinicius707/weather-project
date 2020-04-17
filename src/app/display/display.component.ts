@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { GetWeatherService } from '../get-weather.service';
 import { Subscription } from 'rxjs';
+
+// imports services 
+import { GetWeatherService } from '../get-weather.service';
+import { BroadcastSearchService } from '../broadcast-search.service';
 
 @Component({
   selector: 'app-display',
@@ -11,30 +14,26 @@ export class DisplayComponent implements OnInit {
 
   clickEventSubscription:Subscription;
 
-  // visibility:number = 0
-  // aqui(event){
-  //   let camp = document.getElementById("outrosValores")
-  //   if(this.visibility == 1){
-  //     camp.style.display = "flex"
-  //     return this.visibility =0;
-  //   } else{
-  //     camp.style.display = "none"
-  //     return this.visibility =1;
-  //   }
-  // }
-
-  constructor(private weatherApi: GetWeatherService) {
-
+  constructor(private weatherApi: GetWeatherService, private  _broadcastService: BroadcastSearchService) {
+    
     this.clickEventSubscription = this.weatherApi.getClick().subscribe( () => 
     this.incrementCount());
   }
 
   ngOnInit(): void {
+    this._broadcastService.inputSerch.subscribe(result => {
+      console.log(result)
+      // this.callApi(result)
+    })
   }
   count = 0;
 
   incrementCount() {
     this.count++;
+  }
+
+  callApi(input:string){
+    
   }
 
 }
