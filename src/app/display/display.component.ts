@@ -14,9 +14,9 @@ export class DisplayComponent implements OnInit {
 
   clickEventSubscription:Subscription;
 
-  constructor(private weatherApi: GetWeatherService, private  _broadcastService: BroadcastSearchService) {
+  constructor(private _weatherApi: GetWeatherService, private  _broadcastService: BroadcastSearchService) {
     
-    this.clickEventSubscription = this.weatherApi.getClick().subscribe( () => 
+    this.clickEventSubscription = this._weatherApi.getClick().subscribe( () => 
     this.incrementCount());
   }
 
@@ -26,14 +26,28 @@ export class DisplayComponent implements OnInit {
       // this.callApi(result)
     })
   }
+ 
   count = 0;
 
   incrementCount() {
     this.count++;
   }
 
-  callApi(input:string){
-    
+  callApi(input:string): void{
+    let temperatura
+    let cidade
+    let previsao
+    let hora
+    let descricao
+    this._weatherApi.getWeather(input).subscribe(result =>{
+      temperatura = result.data[0].temp
+      cidade = result.data[0].city_name
+      previsao = result.data[0].app_temp
+      hora = result.data[0].ob_time
+      descricao = result.data[0].weather.description
+      console.log(descricao);
+      
+    })
   }
 
 }
