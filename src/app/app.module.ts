@@ -7,12 +7,14 @@ import { DisplayComponent } from './display/display.component';
 import { SearchComponent } from './search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { ForecastComponent } from './forecast/forecast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
-    SearchComponent
+    SearchComponent,
+    ForecastComponent
   ],
   imports: [
     BrowserModule,
