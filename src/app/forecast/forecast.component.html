@@ -1,1 +1,17 @@
-<p style="font-size: 100px; color:tomato">forecast works! {{ temp }}</p>
+<div>
+    <p>{{temp[0]}}</p>
+    <p>{{hour[0]}}</p>
+    <p>{{description[0]}}</p>
+    <p>{{wind[0]}}</p>
+    <p>{{max_temp[0]}}</p>
+    <p>{{min_temp[0]}}</p>
+    <p *ngFor='let a of precip'>{{a}}</p>
+</div>
+<!-- temp:number[] = [];
+  city:string[] = [];
+  hour:string[] = [];
+  description:string[] = [];
+  wind:number[] = [];
+  max_temp:number[] = []
+  min_temp:number[] = []
+  precip:number[] = [] -->
