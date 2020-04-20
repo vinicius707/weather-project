@@ -9,11 +9,14 @@ import { BroadcastSearchService } from '../broadcast-search.service';
 })
 export class ForecastComponent implements OnInit {
 
-  temp
-  city
-  hour
-  description
-  wind
+  temp:number[] = [];
+  city:string[] = [];
+  hour:string[] = [];
+  description:string[] = [];
+  wind:number[] = [];
+  max_temp:number[] = []
+  min_temp:number[] = []
+  precip:number[] = []
 
   constructor(private _forecast: GetWeatherService, private _broadcast: BroadcastSearchService) { }
 
@@ -26,16 +29,17 @@ export class ForecastComponent implements OnInit {
 
   callApiForecast(city) {
     this._forecast.getWeatherForecast(city).subscribe((result) => {
-      console.log(result.data[0].temp);
-      this.temp = result.data[0].temp
-      this.city = result.data[0].city_name
-      this.hour = result.data[0].ob_time
-      this.description = result.data[0].weather.description
-      this.wind = result.data[0].wind_spd
-
-      this.wind = this.wind.toFixed(2);
-
-     
+      console.log(result);
+      for(let dayData of result.data){
+        this.temp.push(dayData.temp)
+        this.city.push(dayData.city_name)
+        this.hour.push(dayData.ob_time)
+        this.description.push(dayData.weather.description)
+        this.wind.push(dayData.wind_spd.toFixed(2))
+        this.max_temp.push(dayData.max_temp)
+        this.min_temp.push(dayData.min_temp)
+        this.precip.push(dayData.precip)
+      }
       
     })
   }
