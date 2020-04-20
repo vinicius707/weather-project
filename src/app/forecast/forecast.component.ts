@@ -22,12 +22,20 @@ export class ForecastComponent implements OnInit {
 
   ngOnInit(): void {
     this._broadcast.inputSearch.subscribe(result => {
-      console.log(result)
       this.callApiForecast(result)
     })
   }
 
   callApiForecast(city) {
+    this.temp = [];
+    this.city = [];
+    this.hour = [];
+    this.description = [];
+    this.wind = [];
+    this.max_temp = [];
+    this.min_temp = [];
+    this.precip = [];
+
     this._forecast.getWeatherForecast(city).subscribe((result) => {
       console.log(result);
       for(let dayData of result.data){
